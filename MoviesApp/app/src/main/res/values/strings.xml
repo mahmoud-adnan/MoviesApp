@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Movie App</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search…</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="name">Name</string>
+    <string name="about_movie">About Movie</string>
+    <string name="geners">Geners</string>
+    <string name="comics">Actors</string>
+    <string name="rate">Rate Movie</string>
+    <string name="recommended_movies">Recommended Movies</string>
+    <string name="view_all">View All</string>
+    <string name="stories">Stories</string>
+    <string name="events">Events</string>
+    <string name="related_links">Related Links</string>
+    <string name="not_available">Not available</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

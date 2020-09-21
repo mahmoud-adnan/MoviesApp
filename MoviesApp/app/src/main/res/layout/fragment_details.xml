@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/details_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="100dp">
+
+                <ImageView
+                    android:id="@+id/posterImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="1"
+                    android:minHeight="300dp"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/releaseDateText"
+                    style="@style/DetailsTextSubHeadingStyle"
+                    android:layout_below="@id/posterImage"
+                    android:text="@string/name"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/rateText"
+                    style="@style/DetailsTextSubHeadingStyle"
+                    android:layout_below="@id/releaseDateText"
+                    tools:text="A.I.M." />
+
+                <TextView
+                    android:id="@+id/details_description_tv"
+                    style="@style/DetailsTextHeadingStyle"
+                    android:layout_below="@id/rateText"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/about_movie"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/detailsDescriptionValueTv"
+                    style="@style/DetailsTextSubHeadingStyle"
+                    android:layout_below="@id/details_description_tv"
+                    android:text="@string/not_available" />
+
+                <TextView
+                    android:id="@+id/genresLabel"
+                    style="@style/DetailsTextHeadingStyle"
+                    android:layout_below="@id/detailsDescriptionValueTv"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/geners"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/genresText"
+                    style="@style/DetailsTextSubHeadingStyle"
+                    android:layout_below="@id/genresLabel"/>
+
+                <TextView
+                    android:id="@+id/actorsText"
+                    style="@style/DetailsTextHeadingStyle"
+                    android:layout_below="@id/genresText"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/comics"
+                    android:textAllCaps="true" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/actorsRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/actorsText"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_details_recycler" />
+
+                <TextView
+                    android:id="@+id/details_series_tv"
+                    style="@style/DetailsTextHeadingStyle"
+                    android:layout_below="@id/actorsRecycler"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/rate"
+                    android:textAllCaps="true" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/details_series_tv"
+                    android:rating="0"
+                    android:numStars="5"
+                    android:progressBackgroundTint="@android:color/darker_gray"
+                    android:progressTint="@android:color/holo_orange_dark" />
+
+                    <TextView
+                        android:id="@+id/recommendedMoviesTitle"
+                        style="@style/DetailsTextHeadingStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_below="@id/ratingBar"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/recommended_movies"
+                        android:textAllCaps="true" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recommendedMoviewRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/recommendedMoviesTitle"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_details_recycler" />
+
+
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/DetailsProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
